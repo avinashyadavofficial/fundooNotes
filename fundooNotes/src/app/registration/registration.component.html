@@ -1,0 +1,57 @@
+<mat-card class="register-card">
+  <div class="page-container">
+  <div class="left-container">
+  <mat-card-title class="title">
+    <img src="https://ssl.gstatic.com/accounts/ui/logo_2x.png" alt="Google Logo" class="logo">
+    <h2>Create your Google Account</h2>
+  </mat-card-title>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="name-fields">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required>
+      <mat-hint>you can use letters, numbers & periods</mat-hint>
+    </mat-form-field>
+
+    <a class="email-link">Use my current email instead</a>
+
+    <div class="password-fields">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Confirm</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="confirmPassword" required>
+      </mat-form-field>
+    </div>
+
+    <mat-checkbox [(ngModel)]="hidePassword" class="checkbox">Show Password</mat-checkbox>
+
+    <p class="password-hint">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+    <div class="signin-class">
+    <a class="sign-in-link">Sign in insted</a>
+    <button mat-raised-button color="primary" type="submit" class="submit-btn">Next</button>
+    
+    </div>
+  </form>
+  </div>
+  <div class="right container">
+    <img src="../../assets/google-product-image.png" alt="dsdfa">
+    <p>One Account All of Google Working for you</p>
+  </div>
+  </div>
+</mat-card>
