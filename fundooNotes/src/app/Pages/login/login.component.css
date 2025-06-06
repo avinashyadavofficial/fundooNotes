@@ -133,3 +133,8 @@ button[mat-raised-button] {
 button[mat-raised-button]:hover {
   background-color: #1557b0;
 }
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
